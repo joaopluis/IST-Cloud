@@ -1,0 +1,669 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
+
+@font-face {
+    font-family: 'ISTCloud';
+    src:url('fonts/ISTCloud.eot');
+    src:url('fonts/ISTCloud.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ISTCloud.woff') format('woff'),
+        url('fonts/ISTCloud.ttf') format('truetype'),
+        url('fonts/ISTCloud.svg#ISTCloud') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    font-family: 'ISTCloud';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+[class*="icon-"], .file {
+    font-family: 'ISTCloud';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    position:relative;
+}
+.icon-cloud:before {
+    content: "\e000";
+}
+.icon-cloud-download:before {
+    content: "\e001";
+}
+.icon-cloud-upload:before {
+    content: "\e002";
+}
+.file:before {
+    content: "\e003";
+}
+.icon-file-pdf:before {
+    content: "\e008";
+}
+.icon-file-word:before, .icon-file-doc:before, .icon-file-docx:before {
+    content: "\e004";
+}
+.icon-file-excel:before, .icon-file-excel:xls, .icon-file-excel:xlsx {
+    content: "\e005";
+}
+.icon-file-zip:before, .icon-file-rar:before, .icon-file-tar:before, .icon-file-tgz:before {
+    content: "\e006";
+}
+.icon-file-powerpoint:before, .icon-file-ppt:before, .icon-file-pptx:before {
+    content: "\e007";
+}
+.icon-file-xml:before, .icon-file-html:before, .icon-file-php:before {
+    content: "\e009";
+}
+.icon-file-css:before, .icon-file-c:before, .icon-file-cpp:before, .icon-file-java:before, .icon-file-h:before {
+    content: "\e00a";
+}
+.icon-image:before, .icon-file-png:before, .icon-file-gif:before, .icon-file-jpg:before, .icon-file-jpeg:before {
+    content: "\e00b";
+}
+.icon-caret-right:before {
+    content: "\f0da";
+}
+.icon-remove:before {
+    content: "\e00c";
+}
+.icon-folder:before {
+    content: "\e00d";
+}
+.icon-plus:before {
+    content: "\e00e";
+}
+.icon-signout:before {
+    content: "\f08b";
+}
+.icon-signin:before {
+    content: "\f090";
+}
+.icon-film:before {
+    content: "\e00f";
+}
+.icon-warning:before {
+    content: "\e010";
+}
+.icon-notification:before {
+    content: "\e011";
+}
+.icon-share:before {
+    content: "\e012";
+}
+.icon-eye:before {
+    content: "\e013";
+}
+.icon-pencil:before {
+    content: "\e014";
+}
+.icon-share:before {
+    content: "\f064";
+}
+
+.icon-close:before {
+	content: "\e015";
+}
+
+.icon-font:before {
+	content: "\f031";
+}
+
+.icon-caret-left:before {
+	content: "\f0d9";
+}
+
+.icon-folder.share:after{
+    content: "\f064";
+    position:absolute;
+    bottom:-2px;
+    left:-2px;
+    font-size:18px;
+    text-shadow:
+        -1px -1px 0 #FFF,
+        1px -1px 0 #FFF,
+        -1px 1px 0 #FFF,
+        1px 1px 0 #FFF; 
+}
+
+ul#filelist .file, .folder{
+    float:left;
+    font-size:32px;
+    margin: -4px 8px 0 0;
+    color:#009de0;
+}
+
+body,html{
+    height:100%;
+}
+
+body{
+    background:#DDD;
+    font-family:Lato, sans-serif;
+    font-size:16px;
+    padding:30px;
+    padding-left:270px;
+    font-weight:300;
+    
+}
+
+.clear{
+    clear:both;
+}
+
+ul#filelist{
+    list-style:none;
+    padding:0;
+    margin:0;
+    font-size:20px;
+}
+ul#filelist li{
+    display:block;
+    padding:14px;
+    border-top:1px solid #DDD;
+    background:white;
+    -o-text-overflow:ellipsis;
+    -ms-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    white-space:nowrap; 
+    overflow:hidden;
+    
+}
+
+ul#filelist li .actions{
+    float:right;
+    margin:-5px;
+    display:none;
+}
+
+ul#filelist li:hover .actions{
+    display:block;
+}
+
+ul#filelist li .actions a{
+    display:inline-block;
+    width:30px;
+    height:30px;
+    border:2px solid #009de0;
+    color:#009de0;
+    text-align:center;
+    border-radius:17px;
+    margin-left:6px;
+}
+ul#filelist li .actions a:hover{
+    color:white;
+    background:#009de0;
+}
+
+ul#filelist li .actions a i{
+    line-height:30px;
+}
+
+ul#filelist li a{
+    color:#46555f;
+    text-decoration:none;
+}
+
+ul#filelist li span{
+    color:#BBB;
+    font-size:0.7em;
+}
+
+#sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    width:200px;
+    padding:20px;
+    background:#46555f;
+    text-align:center;
+    z-index:99;
+    
+}
+#bread i, #bread span{
+    display:inline-block;
+    height:50px;
+    line-height:50px;
+    float:left;
+    padding-right:6px;
+}
+#bread i{
+    color: #009de0;
+}
+#bread i.icon-cloud{
+    font-size:36px;
+}
+#bread span{
+    font-size:18px;
+    color: #46555f;
+}
+
+
+.campo{
+    padding:10px;
+    font-family:Lato, sans-serif;
+    font-size:16px;
+    border:1px solid #BBB;
+    border-radius:2px;
+    color:#46555f;
+    margin:0;
+    margin-right:10px;
+    font-weight:300;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+.botao{
+    padding:10px 20px;
+    font-family:Lato, sans-serif;
+    font-size:16px;
+    border-radius:2px;
+    border:none;
+    background:#009de0;
+    color:white;
+    font-weight:300;
+    text-transform:uppercase;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    text-align:center;
+    text-decoration:none;
+    border-bottom: 2px solid #2A82A8;
+}
+
+.botao.close{
+    background:#DDD;
+    color:#999;
+    border-bottom-color:#BBB;
+}
+
+.botao.close:hover{
+    background:#EEE;
+    color:#AAA;
+    border-bottom-color:#CCC;
+}
+
+.botao:hover, fieldset:hover .botao{
+    background:#3CB9F0;
+    border-bottom-color:#009de0;
+}
+
+#logo{
+    margin:20px auto 30px;
+    width:auto;
+    height:122px;
+    background-image:url(logo.png);
+    background-position:center center;
+    background-repeat:no-repeat;
+}
+
+#loginlogo{
+    margin:50px 0 10px;
+}
+
+fieldset{
+    margin:0;
+    padding:0;
+    border:none;
+    height:42px;
+}
+
+#uploadform{
+    float:right;
+}
+
+#uploadform span{
+    line-height:39px;
+    color:green;
+    text-transform:uppercase;
+    display:none;
+}
+
+.uploadavatar {
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.uploadavatar a{
+    display:block;
+}
+.uploadavatar input {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+    filter: alpha(opacity=1);
+    opacity: 0.01;
+}
+
+.username span{
+    color: #BBB;
+    font-size:14px;
+    display:block;
+}
+
+.username{
+    color: white;
+    font-size:20px;
+    
+}
+
+#dragoverlay{
+    position:fixed;
+    top:0;
+    left:240px;
+    bottom:0;
+    right:0;
+    background:rgba(0,0,0,0.75);
+    text-align:center;
+    z-index:99;
+    color:#DDD;
+    font-size:40px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    border: 6px dashed #DDD;
+    display:none;
+}
+#doin{
+    display: table;
+    width:100%;
+    height:100%;
+}
+#doin div{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#sidebar a.logout{
+    display:inline-block;
+    color:#BBB;
+    text-decoration:none;
+    padding-top:30px;
+    text-transform:uppercase;
+}
+#sidebar a.logout:hover{
+    border-bottom:1px dashed #BBB;
+}
+
+footer{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    right:20px;
+}
+.joaoluis{
+    color:white;
+}
+#sidebar .joaoluis a{
+    color:white;
+    display:block;
+    opacity:0.5;
+    text-decoration:none;
+    margin-top:10px;
+    
+}
+#sidebar .joaoluis a:hover{
+    opacity:1;
+    border-bottom:none;
+}
+
+.permissions{
+    text-align:left;
+}
+
+.permissions h3{
+    padding:6px;
+    background:#2A82A8;
+    color:white;
+    font-weight:300;
+    font-size:16px;
+    text-align:center;
+    margin:0;
+    text-transform:uppercase;
+}
+
+.permissions ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.permissions li{
+    font-size:14px;
+    padding:6px;
+    background: rgba(255,255,255,0.5);
+    margin:1px 0 0;
+    
+}
+
+.permissions li span{
+    color:rgba(255,255,255,0.5);
+    font-size:14px;;
+    float:right;
+    line-height:18px;
+}
+
+.permissions .botao{
+    display:block;
+    font-size:12px;
+    margin-top:10px;
+}
+
+#sidebar .legenda{
+    font-size:12px;
+    color: #BBB;
+    margin-bottom:4px;
+    text-align:center;
+}
+
+h1{
+    font-weight:300;
+}
+.nofiles{
+    font-size:40px;
+    color:#BBB;
+}
+.nofiles i{
+    font-size:100px;
+}
+
+#quota{
+    width:100%;
+    height:10px;
+    background: rgba(0,0,0,0.25);
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:2px;
+    border-radius:5px;
+}
+
+#qbar{
+    height:6px;
+    background:#009de0;
+    border-radius:3px;
+}
+
+.overlay{
+    background:white;
+    width:400px;
+    z-index:100000;
+    display:none;
+    border-radius:5px;
+    padding:10px;
+}
+.overlay h3{
+    padding:10px;
+    margin:-10px -10px 10px;
+    background:#2A82A8;
+    color:white;
+    font-weight:300;
+    font-size:16px;
+    text-transform:uppercase;
+    border-radius: 5px 5px 0 0;
+}
+
+.permbt{
+    display:inline-block;
+    background:white;
+    border:1px solid #009de0;
+    color: #009de0;
+    font-size:24px;
+    text-align:center;
+    width:40px;
+    margin-right:6px;
+    border-radius:5px;
+    float:right;
+}
+.permbt i{
+        line-height:40px;
+}
+.permbt.active{
+    color: white;
+    background-color:#009de0;
+}
+
+#perms .campo{
+    display:inline-block;
+    width:240px;
+}
+.onefield .campo{
+    width:100%;
+    
+}
+.overlay .bts{
+    margin-top:10px;
+}
+.overlay .botao{
+    float:right;
+}
+.overlay .botao.close{
+    float:left;
+}
+
+.topbar{
+    background:#BBB;
+    padding:10px;
+}
+
+.topbar .botaotb{
+    background:#EEE;
+    display:inline-block;
+    padding:6px 10px;
+    font-size:14px;
+    color:#666;
+    border-radius:2px;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+
+.topbar .botaotb.inactive{
+    opacity:.6;
+}
+
+.topbar .botaotb.left{
+        margin-right:10px;
+}
+.topbar .botaotb.right{
+        margin-left:10px;
+}
+.left{
+    float:left;
+}
+
+.right{
+    float:right;
+}
+
+@media screen and (max-width: 600px) {
+    
+    body{
+        padding:10px;
+        padding-left:10px;
+        padding-top:70px;
+    }
+    
+    #sidebar{
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        width:auto;
+        bottom:auto;
+        height:40px;
+        padding:10px;
+        
+    }
+    #logo{
+        margin:0;
+        width:auto;
+        height:40px;
+        background-image:url(logomobile.png);
+        background-position:left center;
+        background-repeat:no-repeat;
+    }
+    .username{
+        display:none;
+    }
+    #sidebar a.logout{
+        display:block;
+        position:absolute;
+        top:0px;
+        right:0px;
+        padding:10px;
+        line-height:40px;
+        font-size:26px;
+    }
+    #sidebar a.logout span{
+        display:none;
+    }
+    
+    #loginlogo{
+        margin:20px 0;
+        text-align:center;
+    }
+    .campo, .botao{
+        display:block;
+        width:100%;
+        margin-bottom:10px;
+    }
+    #uploadform{
+        display:block;
+        float:none;
+        width:100%;
+    }
+    footer{
+        display:none;
+    }
+    .permissions{
+        display:none;
+    }
