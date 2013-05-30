@@ -8,27 +8,27 @@ Funcionalidades
 
 O IST Cloud permite, em ficheiros:
 
-*Download
-*Renomear
-*Remover
-*Upload
+* Download
+* Renomear
+* Remover
+* Upload
 
 Em pastas:
 
-*Renomear
-*Remover
-*Alterar permissões
-*Criação
+* Renomear
+* Remover
+* Alterar permissões
+* Criação
 
 Fancy stuff
 -----------
 
 Algumas funcionalidades só porque é fancy e fica bem:
 
-*Upload de ficheiros por drag & drop para o browser
-*Mostrar/esconder ficheiros ocultos
-*Através do diretório LDAP do IST, o IST Cloud sabe reconhecer os IST IDs e traduzi-los para nomes.
-*Design responsivo, isto é, o IST Cloud é mobile-ready
+* Upload de ficheiros por drag & drop para o browser
+* Mostrar/esconder ficheiros ocultos
+* Através do diretório LDAP do IST, o IST Cloud sabe reconhecer os IST IDs e traduzi-los para nomes.
+* Design responsivo, isto é, o IST Cloud é mobile-ready
 
 Segurança
 ---------
