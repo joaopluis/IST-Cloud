@@ -186,8 +186,8 @@ if($man){
             <p>Escreve o novo nome que queres dar ao ficheiro <span class="flname"></span>.</p>
             <form action="ops.php?mode=rename&path=<?php echo $path; ?>" method="post">
                 <div>
-                <input type="text" name="newname" placeholder="Novo nome" class="campo" />
-                <input type="hidden" name="filename" class="filename" />
+                    <input type="text" name="newname" placeholder="Novo nome" class="campo" />
+                    <input type="hidden" name="filename" class="filename" />
                 </div>
                 <div class="bts">
                     <input type="button" value="Cancelar" class="botao close">
@@ -277,14 +277,14 @@ if($man){
                 $('.flname').text(name);
                 $('.filename').val(name);
             });
-             $("#remove").overlay({mask: '#000'});
+            $("#remove").overlay({mask: '#000'});
             $('.remove').click(function(){
                 $("#remove").overlay().load();
                 name = $(this).attr('data-name');
                 $('.flname').text(name);
                 $('.filename').val(name);
             });
-              $("#removefolder").overlay({mask: '#000'});
+            $("#removefolder").overlay({mask: '#000'});
             $('.removefolder').click(function(){
                 $("#removefolder").overlay().load();
                 name = $(this).attr('data-name');
@@ -350,8 +350,11 @@ if($man){
             <input type="text" name="username" placeholder="IST ID" class="campo" />
             <input type="password" name="password" placeholder="Password" class="campo" />
             <input type="submit" value="Entrar" class="botao" />
-            
         </form>
+        <div class="aviso">
+            <i class="icon-notification"></i>
+            <p>Ao carregares em ENTRAR, estás a aceitar que a IST Cloud use as tuas credenciais para ligação SSH ao servidor Sigma, NUNCA as guardando. O código está disponível no <a href="">GitHub</a> para quem o quiser comprovar.</p>
+        </div>
         <?php }} ?>
     </body>
 </html>
