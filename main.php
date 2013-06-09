@@ -175,7 +175,7 @@ if(count($files) > 2){
         if($name != "." && $name != ".." && (substr($name,0,1) != "." || $_SESSION['hidden'])){
             echo '<li>';
             
-            echo '<div class="actions">';
+            echo '<div class="actions nomobile">';
             if($file['type'] == 1) echo '<a href="download.php?file='.$path.'/'.$name.'"><i class="icon-cloud-download"></i></a>';
             echo '<a data-name="'.$name.'" class="rename"><i class="icon-font"></i></a>';
             echo '<a data-name="'.$name.'" class="remove'.($file['type'] == 2?"folder":"").'"><i class="icon-remove"></i></a>';

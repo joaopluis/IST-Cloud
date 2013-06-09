@@ -17,6 +17,7 @@ $man = false;
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon-precomposed" href="/touchicon.png">
         <title>IST Cloud</title>
     </head>
     
