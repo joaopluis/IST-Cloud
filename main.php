@@ -18,13 +18,13 @@ $sftp->chdir($path);
     ?> 
     <div id="sidebar">
         <div id="logo"></div>
-        <p class="username"><span>Sessão iniciada como:</span><?php echo name($_SESSION['name']); ?></p>
+        <p class="username nomobile"><span>Sessão iniciada como:</span><?php echo name($_SESSION['name']); ?></p>
         <?php
 $write = false;
 $perms = explode("\n",$sftp->exec('fs la '.$path));
 if(count($perms) > 3){
         ?>
-        <div class="permissions">
+        <div class="permissions nomobile">
             <h3>Permissões</h3>
             <ul>
                 <?php
@@ -48,9 +48,9 @@ if(count($perms) > 3){
             <!--<p class="legenda"><strong>a</strong> admin &middot; <strong>d</strong> remover &middot; <strong>i</strong> inserir<br /><strong>k</strong> bloquear &middot; <strong>l</strong> listar &middot; <strong>r</strong> leitura &middot; <strong>w</strong> escrita</p>-->
             <p class="legenda"><i class="icon-eye"></i> leitura &middot; <i class="icon-pencil"></i> leitura e escrita</p>
         </div><?php } ?>
-        <a href="?logout" class="logout"><span>Sair</span> <i class="icon-signout"></i></a>
+        <a href="?logout" class="logout"><span class="nomobile">Sair</span> <i class="icon-signout"></i></a>
         
-        <footer>
+        <footer class="nomobile">
             <?php preg_match_all("([0-9]+)", $sftp->exec('fs lq'), $matches); $used = $matches[0][2]/1024; $total = $matches[0][1]/1024; $perc = $matches[0][3]; ?>
             <p class="qvals legenda"><?php echo round($used,1)."MB/".$total."MB &middot; ".round($perc,1)."% usado"; ?></p>
             <div id="quota"><div id="qbar" style="width:<?php echo $perc; ?>%"></div></div>
@@ -70,24 +70,13 @@ if(count($perms) > 3){
             <div class="clear"></div>
         </form>
     </div>
-    <?php if($write){ ?>
-    <div id="dragoverlay"><div id="doin"><div>Solta os ficheiros aqui para fazer upload</div></div></div>
-    <form action="upload.php?path=<?php echo $path; ?>" enctype="multipart/form-data" method="POST" id="uploadform">
-        <fieldset class="uploadavatar">
-            <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
-            <input type="file" name="files[]" id="files" multiple />
-            <a class="botao upload"><i class="icon-cloud-upload"></i> Upload</a>
-        </fieldset>
-        <span><i class="icon-cloud-upload"></i> A carregar...</span>
-    </form>
-    <?php } ?>
     
     <?php
 echo '<div id="bread">';
 $addr = "index.php";
 $actparts = explode('/',$path);
 $actparts[0] = $_SESSION['name'];
-echo '<a href="'.$addr.'"><i class="icon-cloud"></i></a> <span>'.$actparts[0].'</span>';
+echo '<a href="'.$addr.'"><i class="icon-cloud"></i></a> <span class="nomobile">'.$actparts[0].'</span>';
 if(count($actparts) > 1){
     $addr .= "?path=.";
     foreach($actparts as $i => $part) {
@@ -98,16 +87,28 @@ if(count($actparts) > 1){
         }
     }
 }
-echo '</div><div class="clear"></div>';
+echo '</div>';
+if($write){ ?>
+    <div id="dragoverlay"><div id="doin"><div>Solta os ficheiros aqui para fazer upload</div></div></div>
+    <form action="upload.php?path=<?php echo $path; ?>" enctype="multipart/form-data" method="POST" id="uploadform">
+        <fieldset class="uploadavatar">
+            <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+            <input type="file" name="files[]" id="files" multiple />
+            <a class="botao upload"><i class="icon-cloud-upload"></i> Upload</a>
+        </fieldset>
+        <span><i class="icon-cloud-upload"></i> A carregar...</span>
+    </form>
+    <?php } 
+echo'<div class="clear"></div>';
 $files = $sftp->rawlist();
 ksort($files);
 
 echo '<div class="topbar">';
 $expl = explode("/", $path);
 array_pop($expl);
-echo '<a'.($path != "." ? ' href="?path='.implode("/",$expl).'"' : "").' class="botaotb'.($path == "." ? " inactive" : "").' left"><i class="icon-caret-left"></i> Retroceder</a>';
-echo '<a rel="#mkdir" class="botaotb left"><i class="icon-plus"></i> Nova Pasta</a>';
-echo '<a href="?path='.$path.'&opt=1" class="botaotb right"><i class="eye"></i> '.($_SESSION['hidden']?'Esconder':'Mostrar').' ficheiros ocultos</a>';
+echo '<a'.($path != "." ? ' href="?path='.implode("/",$expl).'"' : "").' class="botaotb'.($path == "." ? " inactive" : "").' left"><i class="icon-caret-left"></i><span class="nomobile"> Retroceder</span></a>';
+echo '<a rel="#mkdir" class="botaotb left"><i class="icon-plus"></i> <span class="nomobile"> Nova Pasta</span><i class="icon-folder mobileonly"></i></a>';
+echo '<a href="?path='.$path.'&opt=1" class="botaotb right"><i class="icon-eye'.($_SESSION['hidden']?'-blocked':'').'"></i> <span class="nomobile">'.($_SESSION['hidden']?'Esconder':'Mostrar').' ficheiros ocultos</span><span class="mobileonly"> .</span></a>';
 echo '<div class="clear"></div></div>';
     ?>
     <div class="overlay onefield" id="mkdir">

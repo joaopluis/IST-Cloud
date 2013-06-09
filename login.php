@@ -22,9 +22,9 @@
         <div class="footerstuff big">
             <i class="icon-notification"></i>
             <h3>A IST Cloud não é um serviço oficial do IST/DSI.</h3>
-            <p>Ao carregares em ENTRAR, estás a aceitar que a IST Cloud use as tuas credenciais para ligação SSH ao servidor Sigma, NUNCA as guardando.</p>
+            <p class="nomobile">Ao carregares em ENTRAR, estás a aceitar que a IST Cloud use as tuas credenciais para ligação SSH ao servidor Sigma, NUNCA as guardando.</p>
         </div>
-        <div class="footerstuff">
+        <div class="footerstuff nomobile">
             <i class="icon-github"></i>O código da IST Cloud está disponível em <a href="github.com/joaopluis/IST-Cloud/">https://github.com/joaopluis/IST-Cloud/</a>.
         </div>
     </div>

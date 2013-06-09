@@ -185,6 +185,9 @@ you can use the generic selector below, but it's slower:
     font-size:18px;
     opacity:0.75;
 }
+.icon-eye-blocked:before {
+	content: "\e01f";
+}
 ul#filelist .file, .folder{
     float:left;
     font-size:32px;
@@ -285,6 +288,12 @@ ul#filelist li span{
     text-align:center;
     z-index:99;
     
+}
+#bread{
+    float:left;
+}
+#bread a{
+    text-decoration:none;
 }
 #bread i, #bread span{
     display:inline-block;
@@ -761,6 +770,11 @@ h1{
     font-size:54px;
 }
 
+@media screen and (min-width: 801px) {
+    .mobileonly{
+        display:none !important;
+    }
+}
 
 @media screen and (max-width: 800px) {
     
@@ -772,6 +786,10 @@ h1{
     
     body.loginPage{
         padding:10px;
+    }
+    
+    .nomobile{
+        display:none !important;
     }
     
     #sidebar{
@@ -793,9 +811,7 @@ h1{
         background-position:left center;
         background-repeat:no-repeat;
     }
-    .username{
-        display:none;
-    }
+    
     #sidebar a.logout{
         display:block;
         position:absolute;
@@ -805,26 +821,20 @@ h1{
         line-height:40px;
         font-size:26px;
     }
-    #sidebar a.logout span{
-        display:none;
+    #bread{
+        float:none;
+        display:block;
     }
     #uploadform{
         display:block;
         float:none;
         width:100%;
-    }
-    footer{
-        display:none;
-    }
-    .permissions{
-        display:none;
+        clear:both;
+        margin-bottom:10px;
     }
     #loginStrip{
         width:270px;
         margin-left:-135px;
-    }
-    .footerstuff{
-        display:none;   
     }
     #loginContainer{
         width:270px;
@@ -859,9 +869,6 @@ h1{
     }
     .footerstuff.big h3{
         font-size:17px;    
-    }
-    .footerstuff.big p{
-        display:none;
     }
     
     #loginMsg{
