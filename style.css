@@ -114,36 +114,36 @@ you can use the generic selector below, but it's slower:
 }
 
 .icon-close:before {
-	content: "\e015";
+    content: "\e015";
 }
 
 .icon-font:before {
-	content: "\f031";
+    content: "\f031";
 }
 
 .icon-caret-left:before {
-	content: "\f0d9";
+    content: "\f0d9";
 }
 .icon-twitter:before {
-	content: "\e016";
+    content: "\e016";
 }
 .icon-globe:before {
-	content: "\e017";
+    content: "\e017";
 }
 .icon-history:before {
-	content: "\e018";
+    content: "\e018";
 }
 .icon-facebook:before {
-	content: "\e019";
+    content: "\e019";
 }
 .icon-html5:before {
-	content: "\e01a";
+    content: "\e01a";
 }
 .icon-git:before {
-	content: "\e01b";
+    content: "\e01b";
 }
 .icon-github:before {
-	content: "\e012";
+    content: "\e012";
 }
 
 .icon-folder.share:after{
@@ -201,9 +201,11 @@ body{
     font-family:Lato, sans-serif;
     font-size:16px;
     padding:30px;
-    padding-left:270px;
     font-weight:300;
-    
+}
+
+body.mainPage{
+    padding-left:270px;
 }
 
 .clear{
@@ -361,10 +363,6 @@ ul#filelist li span{
     background-image:url(logo.png);
     background-position:center center;
     background-repeat:no-repeat;
-}
-
-#loginlogo{
-    margin:50px 0 10px;
 }
 
 fieldset{
@@ -539,40 +537,6 @@ h1{
     font-size:100px;
 }
 
-
-.footerstuff{
-    color:#BBB;
-    font-size:16px;
-    max-width:800px;
-    margin-top:20px;
-    margin-left:48px;
-}
-.footerstuff.big{
-    margin-left:0;
-}
-.footerstuff h3{
-    font-size:22px;
-    margin:0;
-    padding:0;
-    font-weight:300;
-}
-.footerstuff p{
-    margin:0;
-    padding:0;
-}
-.footerstuff a{
-    text-decoration:none;
-    color:#AAA;
-}
-.footerstuff i{
-    float:left;
-    margin-right:10px;
-    font-size:20px;
-}
-.footerstuff.big i{
-        font-size:68px;
-}
-
 #quota{
     width:100%;
     height:10px;
@@ -623,7 +587,7 @@ h1{
     float:right;
 }
 .permbt i{
-        line-height:40px;
+    line-height:40px;
 }
 .permbt.active{
     color: white;
@@ -669,10 +633,10 @@ h1{
 }
 
 .topbar .botaotb.left{
-        margin-right:10px;
+    margin-right:10px;
 }
 .topbar .botaotb.right{
-        margin-left:10px;
+    margin-left:10px;
 }
 .left{
     float:left;
@@ -682,12 +646,132 @@ h1{
     float:right;
 }
 
-@media screen and (max-width: 600px) {
+#loginStrip{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:300px;
+    left:50%;
+    margin-left:-400px;
+    background:white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+#loginStrip #joaopluis{
+    position:absolute;
+    bottom:30px;
+    left:0;
+    right:0;
+    text-align:center;
+}
+
+#loginlogo{
+    margin:0px 0 20px;
+}
+
+#loginContainer{
+    width:800px;
+    height:280px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin: -140px 0 0 -400px;
+}
+
+#loginContainer form{
+    width:240px;
+    padding:30px;
+    display:block;
+    text-align:right;
+    float:left;
+    margin-right:30px;
+}
+
+#loginContainer form .campo{
+    width: 240px;
+    display:block;
+    margin-bottom:10px;
+}
+
+#loginMsg{
+    padding:10px;
+    line-height:30px;
+    height:30px;
+    margin: 30px 0 20px 330px;
+    color:#DDD;
+    font-size:22px;
+    border-radius:5px;
+    position:relative;
+}
+
+#loginMsg.info{
+    background:#AAA;
+}
+
+#loginMsg.logout:before{
+    content: "\f08b";
+    font-family:ISTCloud;
+    position:absolute;
+    font-size:60px;
+    top:10px;
+    bottom:-5px;
+    right:0px;
+}
+
+#loginMsg.warning{
+    background:#FF5A40;
+}
+
+#loginMsg.warning:before{
+    content: "\e010";
+    font-family:ISTCloud;
+    position:absolute;
+    font-size:60px;
+    top:10px;
+    bottom:-5px;
+    right:0px;
+}
+
+.footerstuff{
+    color:#BBB;
+    font-size:16px;
+    max-width:800px;
+    margin-top:20px;
+}
+.footerstuff h3{
+    font-size:22px;
+    margin:0;
+    padding:0;
+    font-weight:300;
+}
+.footerstuff p{
+    margin:0;
+    padding:0;
+}
+.footerstuff a{
+    text-decoration:none;
+    color:#AAA;
+}
+.footerstuff i{
+    float:left;
+    margin-right:10px;
+    font-size:20px;
+}
+.footerstuff.big i{
+    font-size:54px;
+}
+
+
+@media screen and (max-width: 800px) {
     
-    body{
+    body.mainPage{
         padding:10px;
         padding-left:10px;
         padding-top:70px;
+    }
+    
+    body.loginPage{
+        padding:10px;
     }
     
     #sidebar{
@@ -724,16 +808,6 @@ h1{
     #sidebar a.logout span{
         display:none;
     }
-    
-    #loginlogo{
-        margin:20px 0;
-        text-align:center;
-    }
-    .campo, .botao{
-        display:block;
-        width:100%;
-        margin-bottom:10px;
-    }
     #uploadform{
         display:block;
         float:none;
@@ -745,3 +819,68 @@ h1{
     .permissions{
         display:none;
     }
+    #loginStrip{
+        width:270px;
+        margin-left:-135px;
+    }
+    .footerstuff{
+        display:none;   
+    }
+    #loginContainer{
+        width:270px;
+        position:relative;
+        top:auto;
+        bottom:auto;
+        left:auto;
+        right:auto;
+        height:auto;
+        margin:auto;
+    }
+    #loginContainer form{
+        padding:15px;
+        display:block;
+        text-align:right;
+        margin: auto;
+        float:none;
+    }
+    
+    #loginContainer form .botao{
+        width:240px;
+    }
+    
+    .footerstuff.big{
+        display:block;
+        width:240px;
+        padding:15px;
+        margin-top:10px;
+    }
+    .footerstuff.big i{
+        font-size:40px;    
+    }
+    .footerstuff.big h3{
+        font-size:17px;    
+    }
+    .footerstuff.big p{
+        display:none;
+    }
+    
+    #loginMsg{
+        
+        display:none;
+        margin: 10px 15px 0;
+        color:white;
+        font-size:16px;
+        line-height:normal;
+        height:auto;
+        text-align:center;
+    }
+    
+    #loginMsg.info{
+        display:block;   
+    }
+    
+    #loginMsg.info:before, #loginMsg.warning:before{
+        display:none;
+    }
+    
+}
