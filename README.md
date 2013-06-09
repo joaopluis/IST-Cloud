@@ -29,6 +29,12 @@ Algumas funcionalidades só porque é fancy e fica bem:
 * Mostrar/esconder ficheiros ocultos
 * Através do diretório LDAP do IST, o IST Cloud sabe reconhecer os IST IDs e traduzi-los para nomes.
 * Design responsivo, isto é, o IST Cloud é mobile-ready
+* As pastas podem mostrar ícones adicionais: a pasta web mostra um globo, a pasta yesterday um ícone de backup e as pastas que são repositórios git um ícone indicativo
+
+Icon Font
+---------
+
+Os ícones do IST Cloud, servidos através de uma webfont (de forma a reduzir o tempo de carregamento) são retirados dos icon packs [Font Awesome](http://fortawesome.github.io/Font-Awesome/) e [IcoMoon Free](http://icomoon.io/#icons), e montados numa webfont personalizada usando a web app [IcoMoon](http://icomoon.io/#app-features).
 
 Segurança
 ---------
@@ -38,6 +44,8 @@ As credenciais IST são algo importante e que não se deve fornecer a qualquer u
 O IST Cloud, para manter a segurança, **NUNCA** guarda as credenciais do utilizador, sendo estas passadas diretamente ao servidor (tanto que o IST Cloud não depende de nenhuma base de dados).
 
 Além disto, como o IST Cloud conecta por SFTP, não será possível nada que por SFTP não seja possível.
+
+Como medida adicional, o IST Cloud tem um aviso na página de login anunciando isto mesmo, e que não é um serviço oficial da IST ou da DSI-IST.
 
 Dependências
 ------------

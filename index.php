@@ -238,7 +238,16 @@ if($man){
                     echo '</div>';
                     
                     echo '<i class="';
-                    if($file['type'] == 1){
+                    if($name == "yesterday" && $file['type'] == 2){
+                        echo 'folder icon-folder history';
+                    }
+                    elseif($name == "web" && $file['type'] == 2){
+                        echo 'folder icon-folder web';
+                    }
+                    elseif($file['type'] == 2 && trim($sftp->exec('[ -d '.$path.'/'.$name.'/.git ] && echo "exists"')) == "exists"){
+                        echo 'folder icon-folder git';
+                    }
+                    elseif($file['type'] == 1){
                         echo "file";
                         $parts = explode(".",$name);
                         if(count($parts) > 1)
@@ -255,6 +264,7 @@ if($man){
                     echo $name;
                     echo "</a>";
                     if($file['type'] == 1) echo " <span>".size($file['size'])."</span>";
+
                     echo '</li>';
                 }
             }
@@ -351,9 +361,13 @@ if($man){
             <input type="password" name="password" placeholder="Password" class="campo" />
             <input type="submit" value="Entrar" class="botao" />
         </form>
-        <div class="aviso">
+        <div class="footerstuff big">
             <i class="icon-notification"></i>
-            <p>Ao carregares em ENTRAR, estás a aceitar que a IST Cloud use as tuas credenciais para ligação SSH ao servidor Sigma, NUNCA as guardando. O código está disponível no <a href="">GitHub</a> para quem o quiser comprovar.</p>
+            <h3>A IST Cloud não é um serviço oficial do IST/DSI.</h3>
+            <p>Ao carregares em ENTRAR, estás a aceitar que a IST Cloud use as tuas credenciais para ligação SSH ao servidor Sigma, NUNCA as guardando.</p>
+        </div>
+        <div class="footerstuff">
+            <i class="icon-github"></i>O código da IST Cloud está disponível em <a href="github.com/joaopluis/IST-Cloud/">https://github.com/joaopluis/IST-Cloud/</a>.
         </div>
         <?php }} ?>
     </body>

@@ -103,9 +103,6 @@ you can use the generic selector below, but it's slower:
 .icon-notification:before {
     content: "\e011";
 }
-.icon-share:before {
-    content: "\e012";
-}
 .icon-eye:before {
     content: "\e013";
 }
@@ -127,6 +124,27 @@ you can use the generic selector below, but it's slower:
 .icon-caret-left:before {
 	content: "\f0d9";
 }
+.icon-twitter:before {
+	content: "\e016";
+}
+.icon-globe:before {
+	content: "\e017";
+}
+.icon-history:before {
+	content: "\e018";
+}
+.icon-facebook:before {
+	content: "\e019";
+}
+.icon-html5:before {
+	content: "\e01a";
+}
+.icon-git:before {
+	content: "\e01b";
+}
+.icon-github:before {
+	content: "\e012";
+}
 
 .icon-folder.share:after{
     content: "\f064";
@@ -140,7 +158,33 @@ you can use the generic selector below, but it's slower:
         -1px 1px 0 #FFF,
         1px 1px 0 #FFF; 
 }
-
+.icon-folder.history:after{
+    content: "\e018";
+    position:absolute;
+    color:white;
+    bottom:3px;
+    left:3px;
+    font-size:18px;
+    opacity:0.75;
+}
+.icon-folder.web:after{
+    content: "\e017";
+    position:absolute;
+    color:white;
+    bottom:4px;
+    left:3px;
+    font-size:16px;
+    opacity:0.75;
+}
+.icon-folder.git:after{
+    content: "\e01b";
+    position:absolute;
+    color:white;
+    bottom:2px;
+    left:3px;
+    font-size:18px;
+    opacity:0.75;
+}
 ul#filelist .file, .folder{
     float:left;
     font-size:32px;
@@ -495,19 +539,38 @@ h1{
     font-size:100px;
 }
 
-.aviso{
+
+.footerstuff{
     color:#BBB;
-    font-size:22px;
+    font-size:16px;
     max-width:800px;
+    margin-top:20px;
+    margin-left:48px;
 }
-.aviso a{
+.footerstuff.big{
+    margin-left:0;
+}
+.footerstuff h3{
+    font-size:22px;
+    margin:0;
+    padding:0;
+    font-weight:300;
+}
+.footerstuff p{
+    margin:0;
+    padding:0;
+}
+.footerstuff a{
     text-decoration:none;
     color:#AAA;
 }
-.aviso i{
+.footerstuff i{
     float:left;
     margin-right:10px;
-    font-size:80px;
+    font-size:20px;
+}
+.footerstuff.big i{
+        font-size:68px;
 }
 
 #quota{
