@@ -58,10 +58,10 @@ you can use the generic selector below, but it's slower:
 .icon-file-word:before, .icon-file-doc:before, .icon-file-docx:before {
     content: "\e004";
 }
-.icon-file-excel:before, .icon-file-excel:xls, .icon-file-excel:xlsx {
+.icon-file-excel:before, .icon-file-xls:before, .icon-file-xlsx:before {
     content: "\e005";
 }
-.icon-file-zip:before, .icon-file-rar:before, .icon-file-tar:before, .icon-file-tgz:before {
+.icon-file-zip:before, .icon-file-rar:before, .icon-file-tar:before, .icon-file-tgz:before, .icon-file-bz2:before {
     content: "\e006";
 }
 .icon-file-powerpoint:before, .icon-file-ppt:before, .icon-file-pptx:before {
@@ -75,6 +75,12 @@ you can use the generic selector below, but it's slower:
 }
 .icon-image:before, .icon-file-png:before, .icon-file-gif:before, .icon-file-jpg:before, .icon-file-jpeg:before {
     content: "\e00b";
+}
+.icon-windows:before, .icon-file-exe:before {
+    content: "\e01c";
+}
+.icon-android:before, .icon-file-apk:before {
+    content: "\e016";
 }
 .icon-caret-right:before {
     content: "\f0da";
@@ -149,14 +155,10 @@ you can use the generic selector below, but it's slower:
 .icon-folder.share:after{
     content: "\f064";
     position:absolute;
-    bottom:-2px;
-    left:-2px;
+    bottom:0px;
+    left:0px;
     font-size:18px;
-    text-shadow:
-        -1px -1px 0 #FFF,
-        1px -1px 0 #FFF,
-        -1px 1px 0 #FFF,
-        1px 1px 0 #FFF; 
+    color:white;
 }
 .icon-folder.history:after{
     content: "\e018";
@@ -165,6 +167,15 @@ you can use the generic selector below, but it's slower:
     bottom:3px;
     left:3px;
     font-size:18px;
+    opacity:0.75;
+}
+.icon-folder.windows:after{
+    content: "\e01c";
+    position:absolute;
+    color:white;
+    bottom:4px;
+    left:4px;
+    font-size:16px;
     opacity:0.75;
 }
 .icon-folder.web:after{
@@ -186,7 +197,7 @@ you can use the generic selector below, but it's slower:
     opacity:0.75;
 }
 .icon-eye-blocked:before {
-	content: "\e01f";
+    content: "\e01f";
 }
 ul#filelist .file, .folder{
     float:left;

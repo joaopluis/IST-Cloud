@@ -188,6 +188,9 @@ if(count($files) > 2){
             elseif($name == "web" && $file['type'] == 2){
                 echo 'folder icon-folder web';
             }
+            elseif($name == "Windows7-RNL.V2" && $file['type'] == 2){
+                echo 'folder icon-folder windows';
+            }
             elseif($file['type'] == 2 && trim($sftp->exec('[ -d '.$path.'/'.$name.'/.git ] && echo "exists"')) == "exists"){
                 echo 'folder icon-folder git';
             }
