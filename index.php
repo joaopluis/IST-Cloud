@@ -16,15 +16,12 @@ $man = false;
         <link rel="stylesheet" href="style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-        <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-        <link rel="apple-touch-icon-precomposed" href="touchicon.png">
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon-precomposed" href="images/touchicon.png">
         <title>IST Cloud</title>
     </head>
     
     <?php
-    if($man){
-        include 'man.php';
-    } else {
     include 'functions.php';
     if($_POST['username'] && $_POST['password']){ 
         if($sftp->login($_POST['username'], $_POST['password'])){
@@ -36,9 +33,9 @@ $man = false;
             $warning = "Dados incorretos.";
         }
     }
-    if($sftp->login($_SESSION['name'], $_SESSION['pwd'])){ 
+    if(!$man && $sftp->login($_SESSION['name'], $_SESSION['pwd'])){ 
         include 'main.php';
     } else { 
         include 'login.php';
-      }} ?>
+      } ?>
 </html>

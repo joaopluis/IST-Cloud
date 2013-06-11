@@ -17,7 +17,7 @@ if($mode == "ln"){
 } elseif ($mode == "mkdir"){
     if($_POST['foldername']){
         $path = $_GET['path']."/".$_POST['foldername'];
-        $sftp->exec('mkdir '.$path);
+        $sftp->exec('mkdir "'.$path.'"');
         header('Location: index.php?path='.$path);
     }
 } elseif ($mode == "rename"){

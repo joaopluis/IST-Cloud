@@ -76,6 +76,9 @@ you can use the generic selector below, but it's slower:
 .icon-image:before, .icon-file-png:before, .icon-file-gif:before, .icon-file-jpg:before, .icon-file-jpeg:before {
     content: "\e00b";
 }
+.icon-music:before, .icon-file-mp3:before {
+	content: "\e01d";
+}
 .icon-windows:before, .icon-file-exe:before {
     content: "\e01c";
 }
@@ -130,17 +133,11 @@ you can use the generic selector below, but it's slower:
 .icon-caret-left:before {
     content: "\f0d9";
 }
-.icon-twitter:before {
-    content: "\e016";
-}
 .icon-globe:before {
     content: "\e017";
 }
 .icon-history:before {
     content: "\e018";
-}
-.icon-facebook:before {
-    content: "\e019";
 }
 .icon-html5:before {
     content: "\e01a";
@@ -150,6 +147,15 @@ you can use the generic selector below, but it's slower:
 }
 .icon-github:before {
     content: "\e012";
+}
+.icon-dropbox:before {
+	content: "\e019";
+}
+.icon-play:before {
+	content: "\e01e";
+}
+.icon-link:before {
+	content: "\e020";
 }
 
 .icon-folder.share:after{
@@ -380,7 +386,7 @@ ul#filelist li span{
     margin:20px auto 30px;
     width:auto;
     height:122px;
-    background-image:url(logo.png);
+    background-image:url(images/logo.png);
     background-position:center center;
     background-repeat:no-repeat;
 }
@@ -706,6 +712,9 @@ h1{
     float:left;
     margin-right:30px;
 }
+#loginContainer form.man{
+    text-align:center;
+}
 
 #loginContainer form .campo{
     width: 240px;
@@ -818,7 +827,7 @@ h1{
         margin:0;
         width:auto;
         height:40px;
-        background-image:url(logomobile.png);
+        background-image:url(images/logomobile.png);
         background-position:left center;
         background-repeat:no-repeat;
     }

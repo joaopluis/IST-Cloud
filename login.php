@@ -1,14 +1,19 @@
 <body class="loginPage">
     <div id="loginStrip">
-        <div id="joaopluis"><a href="http://web.ist.utl.pt/joaopluis"><img src="logojoaoluis.png" /></a></div>
+        <div id="joaopluis"><a href="http://web.ist.utl.pt/joaopluis"><img src="images/logojoaoluis.png" /></a></div>
     </div>
     <div id="loginContainer">
         
-        <form action="?path=<?php echo $_GET['path']; ?>" method="post">
-            <img src="logologin.png" id="loginlogo" />
+        <form action="?path=<?php echo $_GET['path']; ?>" method="post" <?php if($man) echo "class='man'"; ?>>
+            <img src="images/logologin.png" id="loginlogo" />
+            <?php if($man){ ?>
+                <h1>Em manutenção.</h1>
+                <p>Tenta novamente mais tarde.</p>
+            <?php } else { ?>
             <input type="text" name="username" placeholder="IST ID" class="campo" />
             <input type="password" name="password" placeholder="Password" class="campo" />
             <input type="submit" value="Entrar" class="botao" />
+            <?php } ?>
         </form>
         <?php
         if(array_key_exists("logout",$_GET)){
