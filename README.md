@@ -30,6 +30,7 @@ Algumas funcionalidades só porque é fancy e fica bem:
 * Através do diretório LDAP do IST, o IST Cloud sabe reconhecer os IST IDs e traduzi-los para nomes.
 * Design responsivo, isto é, o IST Cloud é mobile-ready
 * As pastas podem mostrar ícones adicionais: a pasta web mostra um globo, a pasta yesterday um ícone de backup e as pastas que são repositórios git um ícone indicativo
+* É possível reproduzir ficheiros MP3 diretamente da Cloud
 
 Icon Font
 ---------

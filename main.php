@@ -173,10 +173,16 @@ if(count($files) > 2){
     echo '<ul id="filelist">';
     foreach($files as $name => $file){
         if($name != "." && $name != ".." && (substr($name,0,1) != "." || $_SESSION['hidden'])){
+            if($file['type'] == 1){
+                $parts = explode(".",$name);
+                if(count($parts) > 1)
+                    $extension = array_pop($parts);
+            }
             echo '<li>';
             
             echo '<div class="actions nomobile">';
             if($file['type'] == 1) echo '<a href="download.php?file='.$path.'/'.$name.'"><i class="icon-cloud-download"></i></a>';
+            if($extension == "mp3") echo '<a onclick="return audiopopup(\'audio.php?file='.$path.'/'.$name.'\')"><i class="icon-play"></i></a>';
             echo '<a data-name="'.$name.'" class="rename"><i class="icon-font"></i></a>';
             echo '<a data-name="'.$name.'" class="remove'.($file['type'] == 2?"folder":"").'"><i class="icon-remove"></i></a>';
             echo '</div>';
@@ -196,9 +202,8 @@ if(count($files) > 2){
             }
             elseif($file['type'] == 1){
                 echo "file";
-                $parts = explode(".",$name);
-                if(count($parts) > 1)
-                    echo " icon-file-".array_pop($parts);
+                if($extension)
+                    echo " icon-file-".$extension;
                 
             }
             elseif($file['type'] == 3) echo 'folder icon-folder share';
@@ -300,5 +305,12 @@ else echo "<p class='nofiles'><i class='icon-notification'></i><br />Esta pasta 
         dropArea.addEventListener('drop', handleDrop, false);
         $('body').get(0).addEventListener('dragend', handleDragOut, false);
         $('body').get(0).addEventListener('dragover', handleDragOver, false);
+        
+        function audiopopup(url) {
+            newwindow=window.open(url,'IST Cloud','height=100,width=400');
+            if (window.focus) {newwindow.focus()}
+            return false;
+        }
+        
     </script>
 </body>

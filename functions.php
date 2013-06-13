@@ -27,4 +27,9 @@ function size($bytes){
         return round($kb,2)."K";
     else return round($kb/1024,2)."M";
 }
+
+function filehash($file, $hash){
+    $name = $hash.$file;
+    return md5($name);
+}
 ?>

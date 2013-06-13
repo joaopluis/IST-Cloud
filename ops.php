@@ -35,6 +35,8 @@ if($mode == "ln"){
         $sftp->delete($_GET['path'].'/'.$_POST['filename'], true);
         header('Location: index.php?path='.$_GET['path']);
     }
+} elseif ($mode == "unlink"){ 
+    unlink('istcloud_files/'.$_POST['path']);
 } elseif ($mode == "perm"){
     
     $usr = $_POST['istid'];
