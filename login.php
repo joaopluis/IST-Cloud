@@ -32,7 +32,7 @@
             <p class="nomobile">Ao carregares em ENTRAR, estás a aceitar que a IST Cloud use as tuas credenciais para ligação SSH ao servidor Sigma, NUNCA as guardando.</p>
         </div>
         <div class="footerstuff nomobile">
-            <i class="icon-github"></i>O código da IST Cloud está disponível em <a href="github.com/joaopluis/IST-Cloud/">https://github.com/joaopluis/IST-Cloud/</a>.
+            <i class="icon-github"></i>O código da IST Cloud está disponível em <a href="https://github.com/joaopluis/IST-Cloud/">github.com/joaopluis/IST-Cloud/</a>.
         </div>
     </div>
 </body>
