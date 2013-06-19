@@ -172,6 +172,7 @@ echo '<div class="clear"></div></div>';
 if(count($files) > 2){
     echo '<ul id="filelist">';
     foreach($files as $name => $file){
+        $extension = "";
         if($name != "." && $name != ".." && (substr($name,0,1) != "." || $_SESSION['hidden'])){
             if($file['type'] == 1){
                 $parts = explode(".",$name);
