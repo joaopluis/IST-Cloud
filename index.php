@@ -7,7 +7,6 @@ if(array_key_exists("logout",$_GET)){
     session_unset();
     session_destroy();
 }
-$man = false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,19 +22,19 @@ $man = false;
     
     <?php
     include 'functions.php';
-    if($_POST['username'] && $_POST['password']){ 
-        if($sftp->login($_POST['username'], $_POST['password'])){
+    if($_POST['password']){ 
+        if($sftp->login("ist173292", $_POST['password'])){
         //LOG IN
-        $_SESSION['name'] = $_POST['username'];
+        $_SESSION['name'] = "ist173292";
         $_SESSION['pwd'] = $_POST['password'];
         $sftp = new Net_SFTP('sigma.ist.utl.pt');
         } else {
             $warning = "Dados incorretos.";
         }
     }
-    if(!$man && $sftp->login($_SESSION['name'], $_SESSION['pwd'])){ 
+    if($sftp->login($_SESSION['name'], $_SESSION['pwd'])){ 
         include 'main.php';
     } else { 
         include 'login.php';
-      } ?>
+    } ?>
 </html>

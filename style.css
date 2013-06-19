@@ -921,6 +921,20 @@ body.audio{
     display:none;
 }
 
+.privatelink a{
+    color:#CCC;
+    text-transform:uppercase;
+    font-size:0.9em;
+    text-decoration:none;
+}
+
+.loginName{
+    text-align:center;
+    margin:0 0 10px;
+    font-size:26px;
+    line-height:41px;
+}
+
 @media screen and (min-width: 801px) {
     .mobileonly{
         display:none !important;

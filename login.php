@@ -4,15 +4,17 @@
     </div>
     <div id="loginContainer">
         
-        <form action="?path=<?php echo $_GET['path']; ?>" method="post" <?php if($man) echo "class='man'"; ?>>
+        <form action="?path=<?php echo $_GET['path']; ?>" method="post" <?php if(!array_key_exists("login",$_GET)) echo "class='man'"; ?>>
             <img src="images/logologin.png" id="loginlogo" />
-            <?php if($man){ ?>
-                <h1>Em manutenção.</h1>
-                <p>Tenta novamente mais tarde.</p>
-            <?php } else { ?>
-            <input type="text" name="username" placeholder="IST ID" class="campo" />
+            <?php if(array_key_exists("login",$_GET)){ ?>
+            <p class="loginName">João Pedro Luís</p>
             <input type="password" name="password" placeholder="Password" class="campo" />
             <input type="submit" value="Entrar" class="botao" />
+                
+            <?php } else { ?>
+            <h1>Em manutenção.</h1>
+                <p>Tenta novamente mais tarde.</p>
+                <p class="privatelink"><a href="?login">Login para uso pessoal</a></p>
             <?php } ?>
         </form>
         <?php
